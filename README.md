@@ -1,4 +1,5 @@
 # nonameon
 Computer Science at the Department of Computer Science and Mathematics, Unical university. 
 
-Snake game created with the C++ programming language
+# Snake game created with the C++ programming language
+https://github.com/AleGreco6/nonameon/pull/1
