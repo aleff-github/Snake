@@ -11,7 +11,7 @@ If you want you can write my nickname: NoNameoN
 Having failed to include some library functions, I had to look for them on the internet and below I report what you will find by reading the file 'game_board.h'
 
 # getch()
-int getch(){ //getch function
+	int getch(){ //getch function
 		int ch;
     	struct termios t_old, t_new;
 
@@ -27,7 +27,7 @@ int getch(){ //getch function
 		}
     
  # kbhit(void)
- int kbhit(void){//kbhit function
+ 	int kbhit(void){//kbhit function
 		struct termios oldt, newt;
   		int ch;
   		int oldf;
@@ -59,7 +59,7 @@ Se vuoi puoi scrivere il mio nickname: NoNameoN
 Non essendo riuscito ad includere alcune funzioni necessarie le ho dovuto cercare sull'Internet e di seguito riporto ciò che troverai leggendo il file "game_board.h"
 
 # getch()
-int getch(){ //getch function
+	int getch(){ //getch function
 		int ch;
     	struct termios t_old, t_new;
 
@@ -75,7 +75,7 @@ int getch(){ //getch function
 		}
     
  # kbhit(void)
- int kbhit(void){//kbhit function
+ 	int kbhit(void){//kbhit function
 		struct termios oldt, newt;
   		int ch;
   		int oldf;
