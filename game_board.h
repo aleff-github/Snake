@@ -32,7 +32,7 @@ class game_board{
 		//After game
 		bool winner;
 		
-		//For the queue
+		//For the tail
 		int eaten;
 		int tailX[100];
 		int tailY[100];
@@ -91,11 +91,7 @@ class game_board{
 		}
 		
 		void logic (){
-			/*
-			#
-			#Tail system
-			#
-			*/
+			//Tail system
 			int prevX = tailX[0];
 			int prevY = tailY[0];
 			int prev2X, prev2Y;
@@ -110,11 +106,7 @@ class game_board{
 				prevY = prev2Y;
 			}
 			
-			/*
-			#
-			#logic system (watch command metod)
-			#
-			*/
+			//logic system (watch 'command()' metod)
 			switch (dir){
 				case LEFT:
 					xHead--;
@@ -133,22 +125,18 @@ class game_board{
 				default:
 					break;
 				}
-			/*
-			#
-			# Pacman effect || not Pacman effect
-			#
-			*/
+			//Pacman effect
 			if(pacmanEffect){
-				if(yHead>=height){//Funziona
+				if(yHead>=height){
 					yHead = 1;
 				}
-				else if(xHead>=width){//Funziona
+				else if(xHead>=width){
 					xHead = 1;
 				}
-				else if(yHead<=0){//Funziona
+				else if(yHead<=0){
 					yHead = height-1;
 				}
-				else if(xHead<=0){//funziona
+				else if(xHead<=0){
 					xHead = width-1;
 				}
 			}
@@ -157,12 +145,7 @@ class game_board{
 					gameover = true;
 			}
 			
-			/*
-			#
-			# Eat Fruit effect
-			#
-			*/
-			
+			//Eat Fruit effect
 			if(xHead==xFruit && yHead==yFruit){//if i eat the fruit				
 				xFruit = rand()%(height-1)+1;//I'm changing the fruit posiction
 				yFruit = rand()%(width-1)+1;//Random made
@@ -170,20 +153,12 @@ class game_board{
 				score+=50;//You taken the fruit so you win 50 points
 				eaten+=1;//You taken the fruit so you will be more big
 			}
-			/*
-			#
-			# If you want eat your tail you will loose
-			#
-			*/
+			//If you want eat your tail you will loose
 			for(int i=0;i<eaten;i++){
 				if(tailX[i] == xHead && tailY[i] == yHead)
 					gameover = true;
 			}
-			/*
-			#
-			# If you have 1000 points you win!
-			#
-			*/
+			//If you have 1000 points you win! - You can edit it
 			if(score==1000){
 				winner = true;
 				gameover=true;
@@ -238,7 +213,7 @@ class game_board{
 		bool getGameOver () {return gameover;}
 		void setPacmanEffect (bool choise) {pacmanEffect = choise;}
 		
-		int getch(){
+	int getch(){ //getch function
 		int ch;
     	struct termios t_old, t_new;
 
@@ -253,7 +228,7 @@ class game_board{
     	return ch;
 		}
 		
-		int kbhit(void){
+	int kbhit(void){//kbhit function
 		struct termios oldt, newt;
   		int ch;
   		int oldf;
@@ -273,6 +248,6 @@ class game_board{
   		return 0;
 		}
 		
-};
+}; //End class
 
 #endif
